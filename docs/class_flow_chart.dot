@@ -1,15 +1,15 @@
 digraph {
     Class -> functions
 
-    GUI [label="GUI\nhandles window\ndimensions"]
+    Canvas [label="Canvas\nhandles window\ndimensions"]
     add_drawable [label="add_drawable((jpeg_file_obj|string text), drawable_config={})"]
     drawables [label="drawables()\niterator over\nall drawables"]
 
-    GUI -> add_drawable
-    GUI -> drawables
+    Canvas -> add_drawable
+    Canvas -> drawables
 
 
-    _DrawableConfig [label="_DrawableConfig\nAll messages\nbetween GUI and\nconfig are passed as\n_DrawableConfig\n\
+    _DrawableConfig [label="_DrawableConfig\nAll messages\nbetween Canvas and\nconfig are passed as\n_DrawableConfig\n\
 instances"]
 
 
