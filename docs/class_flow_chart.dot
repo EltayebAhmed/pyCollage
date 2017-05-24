@@ -9,8 +9,17 @@ digraph {
     Canvas -> drawables
 
 
-    _DrawableConfig [label="_DrawableConfig\nAll messages\nbetween Canvas and\nconfig are passed as\n_DrawableConfig\n\
-instances"]
+    _DrawableConfig [label="_DrawableConfig\nAll messages\nbetween Canvas and\nconfig are passed as\ninstances of\n
+    _DrawableConfig"]
+    get_size [label="get size off message"]
+    set_size [label="set size of message"]
+    get_pos [label="get position off message"]
+    set_pos [label="set position of message"]
+
+    _DrawableConfig -> get_pos
+    _DrawableConfig -> set_pos
+    _DrawableConfig -> get_size
+    _DrawableConfig -> set_size
 
 
     Drawable [label="Drawable\nhandles resouces\njpeg, text..."]
