@@ -1,11 +1,11 @@
 from abc import ABC,abstractmethod
 
 
-class Canvas(ABC):
+class CanvasInterface(ABC):
     @abstractmethod
     def add_drawable(self, drawable_content, drawable_config):
-        """
-        An function to create and add a new drawable to the GUI Canvas
+        """A function that creates and adds a new Drawable to the  Canvas
+
         :param drawable_content: a python file object that contains a jpeg OR
             as a string that contains plain text
         :param drawable_config:  a python dictionary. IS CURRENTLY USELESS
@@ -14,7 +14,14 @@ class Canvas(ABC):
 
     @abstractmethod
     def drawables(self):
-        """
-        An iterator over all drawables
+        """An iterator over all drawables
+
         :return: Iterator over all drawables
+        """
+
+    @abstractmethod
+    def display(self):
+        """Display the canvas. NOTE this is a blocking function
+
+        :return: Error code, 0 if successful
         """
