@@ -1,0 +1,20 @@
+digraph {
+    Class -> functions
+
+    GUI [label="GUI\nhandles window\ndimensions"]
+    add_drawable [label="add_drawable((jpeg_file_obj|string text), drawable_config={})"]
+    drawables [label="drawables()\niterator over\nall drawables"]
+
+    GUI -> add_drawable
+    GUI -> drawables
+
+
+    _DrawableConfig [label="_DrawableConfig\nAll messages\nbetween GUI and\nconfig are passed as\n_DrawableConfig\n\
+instances"]
+
+
+    Drawable [label="Drawable\nhandles resouces\njpeg, text..."]
+    _apply_config [label="_apply_config(drawable_config)"]
+
+    Drawable -> _apply_config
+}
