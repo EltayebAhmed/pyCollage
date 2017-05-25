@@ -15,7 +15,7 @@ digraph {
     _DrawableConfig -> get_pos
     _DrawableConfig -> set_pos
     _DrawableConfig -> get_size
-    _DrawableConfig -> set_size
+    _DrawableConfig -> set_size [label=has]
 
 
     Drawable [label="Drawable\nhandles resouces\njpeg, text..."]

@@ -1,0 +1,10 @@
+digraph{
+    Drawable [label=Drawable]
+    Canvas [label=Canvas]
+    ActionManager[label=ActionManager]
+
+    Canvas -> Drawable [label="owns many"]
+    Drawable -> Canvas [label = response]
+    Canvas -> Drawable [label= query]
+
+}

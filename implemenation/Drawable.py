@@ -1,4 +1,4 @@
-from interfaces.Drawable import DrawableInterface
+from interfaces.drawable import DrawableInterface
 import pygame
 import os.path
 

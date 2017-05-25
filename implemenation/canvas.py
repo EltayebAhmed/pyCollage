@@ -10,9 +10,7 @@ class Canvas(CanvasInterface):
     def drawables(self):
         return iter(self._drawables)
 
-    def add_drawable(self, drawable_content, drawable_config):
-        drawable = Drawable(self, drawable_content)
-        drawable.apply_config(drawable_config)
+    def add_drawable(self, drawable):
         self._drawables.append(drawable)
 
     def display(self):
@@ -32,6 +30,7 @@ class Canvas(CanvasInterface):
 
             pygame.display.flip()
 
+    def game
 
 c = Canvas()
 im_path = (r"C:\Users\eltay\PycharmProjects\gui2draw\resources\black_queen.png")
