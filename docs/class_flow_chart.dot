@@ -1,25 +1,22 @@
 digraph {
-    Class -> functions
+    ABC -> Component
+    Component -> CanvasPublicInterface
+    Component -> DrawablePublicInterface
+    Component -> ActionManagerPublicInterface
 
-    Canvas [label="Canvas\nhandles window\ndimensions"]
-    add_drawable [label="add_drawable((jpeg_file_obj|string text), drawable_config={})"]
-    drawables [label="drawables()\niterator over\nall drawables"]
+    CanvasPublicInterface -> CanvasPrivateInterface
+    DrawablePublicInterface -> DrawablePrivateInterface
+    ActionManagerPublicInterface -> ActionManagerPrivateInterface
 
-    Canvas -> add_drawable
-    Canvas -> drawables
+    CanvasPrivateInterface -> Canvas
+    DrawablePrivateInterface -> Drawable
+    ActionManagerPrivateInterface -> ActionManager
 
+    Canvas -> CanvasHTML
+    Canvas -> CanvasPygame
+    Drawable -> DrawableHTML
+    Drawable -> DrawablePygame
+    ActionManager -> ActionManagerHTML
+    ActionManager-> ActionManagerPygame
 
-    _DrawableConfig [label="_DrawableConfig\nAll messages\nbetween Canvas and\nconfig are passed as\ninstances of\n
-    _DrawableConfig"]
-
-    _DrawableConfig -> get_pos
-    _DrawableConfig -> set_pos
-    _DrawableConfig -> get_size
-    _DrawableConfig -> set_size [label=has]
-
-
-    Drawable [label="Drawable\nhandles resouces\njpeg, text..."]
-    apply_config [label="apply_config(drawable_config)"]
-
-    Drawable -> apply_config
 }

@@ -4,7 +4,9 @@ digraph{
     ActionManager[label=ActionManager]
 
     Canvas -> Drawable [label="owns many"]
-    Drawable -> Canvas [label = response]
-    Canvas -> Drawable [label= query]
 
+    ActionManager -> Drawable
+    ActionManager -> Canvas
+
+    {rank=same; ActionManager, Canvas}
 }
