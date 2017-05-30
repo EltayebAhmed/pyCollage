@@ -1,17 +1,51 @@
 digraph {
     ABC -> Component
+
+    subgraph cluster_l1 {
+        fontcolor=red;
+        label = "Public Interfaces";
+        CanvasPublicInterface
+        DrawablePublicInterface
+        ActionManagerPublicInterface
+    }
+
     Component -> CanvasPublicInterface
     Component -> DrawablePublicInterface
     Component -> ActionManagerPublicInterface
 
+    subgraph cluster_l2 {
+        fontcolor=red;
+        label =  "Private Intefaces";
+        CanvasPrivateInterface
+        DrawablePrivateInterface
+        ActionManagerPrivateInterface
+    }
     CanvasPublicInterface -> CanvasPrivateInterface
     DrawablePublicInterface -> DrawablePrivateInterface
     ActionManagerPublicInterface -> ActionManagerPrivateInterface
+
+    subgraph cluster_l3{
+        fontcolor=red;
+        label="API Logic";
+        Canvas
+        Drawable
+        ActionManager
+    }
 
     CanvasPrivateInterface -> Canvas
     DrawablePrivateInterface -> Drawable
     ActionManagerPrivateInterface -> ActionManager
 
+     subgraph cluster_l4{
+        fontcolor=red;
+        label = "Concrete Implementations";
+        CanvasHTML
+        CanvasPygame
+        DrawableHTML
+        DrawablePygame
+        ActionManagerHTML
+        ActionManagerPygame
+    }
     Canvas -> CanvasHTML
     Canvas -> CanvasPygame
     Drawable -> DrawableHTML
