@@ -16,5 +16,5 @@ class MyCanvas(CanvasHTML):
         if abs(self.steps) == 50:
             self.direction *= -1
 
-c = MyCanvas()
+c = MyCanvas((500,500))
 c.display(10)

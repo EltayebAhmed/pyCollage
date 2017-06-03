@@ -5,6 +5,12 @@ from interfaces.private.component import Component
 
 class CanvasPublicInterface(Component):
     @abstractmethod
+    def __init__(self, size):
+        """
+        :param dimensions: tuple of ints (x,y) 
+        """
+
+    @abstractmethod
     def add_drawable(self, drawable):
         """Add a new drawable to the  Canvas
         :param drawable: An instance of class drawable
