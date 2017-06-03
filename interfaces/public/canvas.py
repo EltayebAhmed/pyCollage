@@ -33,19 +33,13 @@ class CanvasPublicInterface(Component):
         """
 
     @abstractmethod
-    def display(self):
+    def display(self, fps):
         """Display the canvas and run the animation. NOTE this is a blocking function
 
+        :param fps: frames per second (integer)
         :return: Error code, 0 if successful
         """
 
-    @abstractmethod
-    def execute_action(self, action):
-        """Perfom canvas action (e.g. close, minimize, ...) in the passed action instance
 
-        :param action:  Instance of Action
-        :return: None
-        """
-        pass
 
 
