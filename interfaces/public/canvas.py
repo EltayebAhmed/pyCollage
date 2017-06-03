@@ -23,6 +23,7 @@ class CanvasPublicInterface(Component):
         """All user code needed to be run before the animation starts such as initializing variables
 
         This function should be implemented by the API user
+        :return None:
         """
 
     @abstractmethod
@@ -30,6 +31,7 @@ class CanvasPublicInterface(Component):
         """All user code needed to be run to update the animation frame.
 
         This function should be implemented by the API user
+        :return None:
         """
 
     @abstractmethod
@@ -37,7 +39,7 @@ class CanvasPublicInterface(Component):
         """Display the canvas and run the animation. NOTE this is a blocking function
 
         :param fps: frames per second (integer)
-        :return: Error code, 0 if successful
+        :return: None
         """
 
 

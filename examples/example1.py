@@ -2,7 +2,6 @@ from concrete_implementation.canvashtml import CanvasHTML
 from concrete_implementation.drawablehtml import DrawableHTML
 
 class MyCanvas(CanvasHTML):
-
     def setup(self):
         self.queen = DrawableHTML("resources/black_queen.png", "queen")
         self.add_drawable(self.queen)
