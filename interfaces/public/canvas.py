@@ -7,7 +7,7 @@ class CanvasPublicInterface(Component):
     @abstractmethod
     def __init__(self, size):
         """
-        :param dimensions: tuple of ints (x,y) 
+        :param dimensions: tuple of ints (x,y)
         """
 
     @abstractmethod
@@ -15,13 +15,6 @@ class CanvasPublicInterface(Component):
         """Add a new drawable to the  Canvas
         :param drawable: An instance of class drawable
         :return: None
-        """
-
-    @abstractmethod
-    def drawables(self):
-        """Returns an iterator over all drawables
-
-        :return: Iterator over all drawables
         """
 
     @abstractmethod

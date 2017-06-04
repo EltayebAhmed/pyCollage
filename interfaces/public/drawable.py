@@ -4,7 +4,7 @@ from interfaces.private.component import Component
 
 class DrawablePublicInterface(Component):
     @abstractmethod
-    def __init__(self, content, name):
+    def __init__(self, content):
         """
 
         :param content: path to jpeg image
@@ -25,7 +25,3 @@ class DrawablePublicInterface(Component):
         :param position: tuple of ints (x, y)
         :return: None
         """
-
-    @abstractmethod
-    def get_name(self):
-        """Return the name of the drawable"""
