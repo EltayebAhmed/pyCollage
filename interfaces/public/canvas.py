@@ -1,9 +1,9 @@
 from abc import abstractmethod
+from interfaces.private.canvas_component import CanvasComponent
 
-from interfaces.private.component import Component
 
-
-class CanvasPublicInterface(Component):
+class CanvasPublicInterface(CanvasComponent):
+    """All methods on this interface are to be implemented in thi API implementation"""
     @abstractmethod
     def __init__(self, size):
         """

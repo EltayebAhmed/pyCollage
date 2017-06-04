@@ -10,7 +10,7 @@ class Component(ABC):
         :return None:"""
 
     @abstractmethod
-    def engine_initialize(self):
+    def backend_initialize(self):
         """Run all backend code related to backend code needed to initialize the animation
         Will be called once before the animation starts
 

@@ -1,6 +1,19 @@
 digraph {
     ABC -> Component
 
+
+ subgraph cluster_l0 {
+        fontcolor=red;
+        label = "ComponentInterfaces";
+        DrawableComponent
+        CanvasComponent
+
+    }
+
+    Component -> DrawableComponent
+    Component -> CanvasComponent
+
+
     subgraph cluster_l1 {
         fontcolor=red;
         label = "Public Interfaces";
@@ -9,8 +22,8 @@ digraph {
         ActionManagerPublicInterface
     }
 
-    Component -> CanvasPublicInterface
-    Component -> DrawablePublicInterface
+    CanvasComponent -> CanvasPublicInterface
+    DrawableComponent -> DrawablePublicInterface
     Component -> ActionManagerPublicInterface
 
     subgraph cluster_l2 {
