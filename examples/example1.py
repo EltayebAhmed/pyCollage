@@ -1,9 +1,9 @@
-from concrete_implementation.canvashtml import CanvasHTML
-from concrete_implementation.drawablehtml import DrawableHTML
+from concrete_implementation.canvas_pygame import CanvasPygame
+from concrete_implementation.drawable_pygame import DrawablePygame
 
-class MyCanvas(CanvasHTML):
+class MyCanvas(CanvasPygame):
     def setup(self):
-        self.queen = DrawableHTML("resources/black_queen.png", "queen")
+        self.queen = DrawablePygame(self, "resources/black_queen.png")
         self.add_drawable(self.queen)
         self.queen.set_pos((100,100))
         self.steps = 0
@@ -15,6 +15,7 @@ class MyCanvas(CanvasHTML):
         self.steps += self.direction
         if abs(self.steps) == 50:
             self.direction *= -1
+        self.queen.set_pos(new_pos)
 
 c = MyCanvas((500,500))
-c.display(10)
+c.display(30)

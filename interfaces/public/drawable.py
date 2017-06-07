@@ -5,10 +5,10 @@ from interfaces.private.drawable_component import DrawableComponent
 class DrawablePublicInterface(DrawableComponent):
     """All methods on this interface are to be implemented in thi API implementation"""
     @abstractmethod
-    def __init__(self, content):
+    def __init__(self, canvas, content):
         """
 
-        :param content: path to jpeg image
+        :param content: path to image file
         :param name: name of drawable (string)
         """
 

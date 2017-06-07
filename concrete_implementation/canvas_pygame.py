@@ -9,3 +9,9 @@ class CanvasPygame(Canvas):
 
     def backend_tick(self):
         pygame.display.flip()
+
+    def blit_image(self, image, position):
+        self.__display.blit(image, position)
+
+    def blit_canvas(self):
+          self.__display.fill((255, 255, 255))
