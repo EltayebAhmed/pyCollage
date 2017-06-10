@@ -45,5 +45,11 @@ class CanvasPublicInterface(CanvasComponent):
     def sleep(self, time):
         """wait for time specified in seconds."""
 
+    def get_position_owner(self, position):
+        """Return the drawable at the given position will return self (canvas) if no drawable if present at given point.
+
+        :param position: tuple of ints (x,y)
+        :return: instance of Drawable OR self
+        """
 
 

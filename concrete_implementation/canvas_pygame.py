@@ -6,7 +6,9 @@ class CanvasPygame(Canvas):
     def backend_initialize(self):
         pygame.init()
         self.__display = pygame.display.set_mode(self._size)
-        self._event_manager = EventManagerPygame()
+        self._event_manager = EventManagerPygame(self) # TODO fix this hack
+        self._event_manager.backend_initialize()
+
 
     def backend_tick(self):
         pygame.display.flip()

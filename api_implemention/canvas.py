@@ -20,6 +20,7 @@ class Canvas(CanvasPrivateInterface):
         time_between_frames = 1/fps
         while 1:
             start = time.time()
+            self._event_manager.tick()
             self.update_frame()
             self.blit_canvas()
             for drawable in self._drawables:
@@ -34,6 +35,16 @@ class Canvas(CanvasPrivateInterface):
         else:
             self._event_manager.add_drawable_event_handler(drawable, event_type, function)
 
+    def sleep(self, time):
+        self._event_manager._sleep(time)
 
-
+    def get_position_owners(self, position):
+        owners = []
+        for drawable in self._drawables:
+            if drawable.is_position_in_bounds(position):
+                owners.append(drawable)
+        if owners:
+            return owners
+        else:
+            return [self]
 
