@@ -41,6 +41,9 @@ class CanvasPublicInterface(CanvasComponent):
         :return: None
         """
 
+    @abstractmethod
+    def sleep(self, time):
+        """wait for time specified in seconds."""
 
 
 
