@@ -18,6 +18,13 @@ class CanvasPublicInterface(CanvasComponent):
         """
 
     @abstractmethod
+    def remove_drawable(self, drawable):
+        """Remove a drawable from the canvas
+        :param drawable: An instance of class drawable currently associated with the canvas.
+        :return:
+        """
+
+    @abstractmethod
     def drawables(self):
         """Return an iterator over all drawables associated with this canvas"""
 

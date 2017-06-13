@@ -13,6 +13,9 @@ class Canvas(CanvasPrivateInterface):
     def add_drawable(self, drawable):
         self._drawables.append(drawable)
 
+    def remove_drawable(self, drawable):
+        self._drawables.remove(drawable)
+
     def drawables(self):
         return iter(self._drawables)
 

@@ -1,18 +1,16 @@
 from interfaces.private.event_handler import EventHandlerPrivateInterface
 from interfaces.private.events import LEFT_MOUSE_BUTTON_UP, LEFT_MOUSE_BUTTON_DOWN, MOUSE_MOTION
 
-class EventManager(EventHandlerPrivateInterface):
+class  EventManager(EventHandlerPrivateInterface):
     def __init__(self, canvas):
         self._handlers = {} # (drawable/canvas, event_type) : list of functions
         self._event_list = []
         self._canvas  = canvas
         self._left_mouse_down = False
         self._currently_left_clicked_item = None
-    def drawable_handlers(self):
-        return self._handlers.copy()
 
-    def remove_all_event_handlers(self, drawable, event_type):
-        self._handlers[(drawable, event_type)] = []
+    def remove_all_event_handlers(self, component, event_type):
+        self._handlers[(component, event_type)] = []
 
     def add_event_handler(self, component, event_type, handler):
         self._handlers[(component, event_type)] = self._handlers.get((component, event_type), [])
