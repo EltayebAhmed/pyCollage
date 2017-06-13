@@ -40,7 +40,10 @@ class Drawable(DrawablePrivateInterface):
     def _handler_start_drag(self, event):
 
         def _handler_follow_mouse(event):
-            self.set_pos(event.position) # TODO add displacement to MOUSE_MOTION events. Document it then use it here
+            pos = self.get_pos()
+            new_pos = (pos[0] + event.displacement[0], pos[1] + event.displacement[1])
+            self.set_pos(new_pos) # TODO add displacement to MOUSE_MOTION events. Document it then use it here
+
         def _handler_stop_follow_mouse(event):
             self.add_event_handler(MOUSE_MOTION, None)
         self.add_event_handler(MOUSE_MOTION, _handler_follow_mouse)

@@ -1,6 +1,7 @@
 from concrete_implementation.canvas_pygame import CanvasPygame
 from concrete_implementation.drawable_pygame import DrawablePygame
 
+
 class MyCanvas(CanvasPygame):
     def setup(self):
         self.queen = DrawablePygame(self, "resources/black_queen.png")

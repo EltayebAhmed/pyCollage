@@ -13,6 +13,9 @@ class Canvas(CanvasPrivateInterface):
     def add_drawable(self, drawable):
         self._drawables.append(drawable)
 
+    def drawables(self):
+        return iter(self._drawables)
+
     def display(self, fps):
         self.setup()
         for drawable in self._drawables:
@@ -31,9 +34,9 @@ class Canvas(CanvasPrivateInterface):
 
     def add_drawable_event_handler(self,drawable, event_type, function):
         if function is None:
-            self._event_manager.remove_drawable_event_handler(drawable, event_type)
+            self._event_manager.remove_all_event_handlers(drawable, event_type)
         else:
-            self._event_manager.add_drawable_event_handler(drawable, event_type, function)
+            self._event_manager.add_event_handler(drawable, event_type, function)
 
     def sleep(self, time):
         self._event_manager._sleep(time)
