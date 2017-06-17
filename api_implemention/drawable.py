@@ -14,11 +14,14 @@ class Drawable(DrawablePrivateInterface):
     def set_pos(self, position):
         assert type(position) == tuple
         assert len (position) == 2
-        assert all(map(lambda x : type(x)==int and x>=0, position))
+        assert all(map(lambda x : type(x)==int , position))
         self._position = position
 
     def get_size(self):
         return self._get_size()
+
+    def set_size(self, size):
+        self._set_size(size)
 
     def canvas(self):
         return self._canvas

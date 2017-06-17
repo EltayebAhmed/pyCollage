@@ -54,3 +54,6 @@ class Canvas(CanvasPrivateInterface):
         else:
             return [self]
 
+
+    def size(self):
+        return self._size
