@@ -24,6 +24,12 @@ class DrawablePublicInterface(DrawableComponent):
 
         :return: tuple of ints (x,y)"""
 
+    def set_size(self, size):
+        """Set the size of the drawable
+
+        :param size: tuple of ints (x, y)
+        :return: None
+        """
     @abstractmethod
     def set_pos(self, position):
         """Set the position of the drawable to "position"

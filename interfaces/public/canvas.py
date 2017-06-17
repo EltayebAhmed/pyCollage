@@ -63,4 +63,9 @@ class CanvasPublicInterface(CanvasComponent):
         :return: instance of Drawable OR self
         """
 
+    def size(self):
+        """Return the size of the canvas
+
+        :return: tuple of ints (x,y)
+        """
 

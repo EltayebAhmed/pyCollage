@@ -11,3 +11,6 @@ class DrawablePygame(Drawable):
 
     def _get_size(self):
         return self.__image.get_size()
+
+    def _set_size(self, size):
+        self.__image = pygame.transform.scale(self.__image, size)
